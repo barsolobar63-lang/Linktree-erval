@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erval Store | Link Tree</title>
+  <style>
+    /* ==== ANIMASI LOADING ==== */
+    #loading {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .spinner {
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ==== TAMPILAN UTAMA ==== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('Profil.jpg') no-repeat center center/cover;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* ==== DASHBOARD ==== */
+    header {
+      background: rgba(0, 102, 255, 0.8);
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 1.3em;
+      font-weight: bold;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* ==== PROFIL ==== */
+    .profile {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #00c6ff;
+      box-shadow: 0 0 20px rgba(0, 204, 255, 0.6);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .profile h2 {
+      margin-top: 10px;
+      font-size: 1.6em;
+    }
+
+    /* ==== LINK BUTTON ==== */
+    .links {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      width: 90%;
+      max-width: 400px;
+    }
+    .link-btn {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      background: rgba(0, 102, 255, 0.8);
+      color: white;
+      font-size: 1.1em;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+    .link-btn:hover {
+      background: #00c6ff;
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <!-- ANIMASI LOADING -->
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <header>🌐 Dashboard Erval Store</header>
+
+  <!-- PROFIL -->
+  <div class="profile">
+    <img src="Profil.jpg" alt="Profil Erval Store">
+    <h2>Erval Store</h2>
+    <p>Top Up • Akun Game • Pulsa • Layanan Cepat</p>
+  </div>
+
+  <!-- LINK BUTTON -->
+  <div class="links">
+    <a href="https://wa.me/6289509499638" class="link-btn" target="_blank">💬 Chat via WhatsApp</a>
+    <a href="https://www.instagram.com/ervalstore2?igsh=MTBpazZnb282aXB1Yg==" class="link-btn" target="_blank">📸 Instagram Erval Store</a>
+  </div>
+
+  <footer>© 2025 Erval Store. All Rights Reserved.</footer>
+
+  <!-- SCRIPT LOADING -->
+  <script>
+    const loader = document.getElementById('loading');
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        loader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => loader.style.display = 'none', 500);
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
